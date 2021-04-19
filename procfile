@@ -1,0 +1,1 @@
+web: gunicorn Breast_Cancer_Detection.wsgi --log-file -

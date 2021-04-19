@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>Breast Cancer Detection</title>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <style>
+          body {
+               /* background-image: url('/home/rishi_maheswari/Desktop/Breast_Cancer_Detection/template/108129-light-blue-wave.jpg'); */
+               background-color: #abcdea;
+          }
+          
+          div.a {
+  text-align: center;
+}
+
+.container{  
+text-align: center;  
+border: 7px solid red;  
+width: 300px;  
+height: 200px;  
+padding-top: 100px;  
+}  
+#btn{  
+font-size: 25px;  
+}  
+
+
+.center{
+     margin: auto;
+  width: 50%;
+  /* border: 3px solid green; */
+  padding: 10px;
+}
+     </style>
+
+</head>
+
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+    
+
+
+     <div class = "a">
+          <h1>Breast Cancer Detection</h1>
+         </div>
+
+
+
+<div >
+     {% block content%}
+     {% endblock %}
+    
+</div>
+
+    
+
+</body>
+</html>

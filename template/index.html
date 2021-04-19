@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+         
+    <title>Breezed HTML Bootstrap Template</title>
+
+    <!--
+
+Breezed Template
+
+https://templatemo.com/tm-543-breezed
+
+-->
+    <!-- Additional CSS Files -->
+    <!-- template/static/assets/css/bootstrap.min.css -->
+    <link rel="stylesheet" type="text/css" href="static/assets/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/home/rishi_maheswari/Desktop/Breast_Cancer_Detection/template/static/assets/css/bootstrap.min.css"> -->
+
+    <link rel="stylesheet" type="text/css" href="static/assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="static/assets/css/templatemo-breezed.css">
+
+    <link rel="stylesheet" href="static/assets/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="static/assets/css/lightbox.css">
+
+    <style>
+        h1{
+            color: white;        }
+
+
+            input[type=file] {
+    padding:5px; 
+    border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=file]:focus {
+    border-color:#333;
+}
+
+
+input[type=text] {
+    padding:5px; 
+    border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:rgb(94, 231, 14); 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+
+
+
+    
+    </style>
+
+</head>
+{% block content%}
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="" class="logo">
+                            Breast Cancer Detection
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <!-- <li class="scroll-to-section"><a href="https://www.mayoclinic.org/diseases-conditions/breast-cancer/symptoms-causes/syc-20352470#:~:text=Doctors%20know%20that%20breast%20cancer,other%20parts%20of%20your%20body." class="active">About</a></li> -->
+                            
+                            <li class="scroll-to-section"><a href="https://www.mayoclinic.org/diseases-conditions/breast-cancer/symptoms-causes/syc-20352470#:~:text=Doctors%20know%20that%20breast%20cancer,other%20parts%20of%20your%20body.">About</a></li>
+                            <li class="scroll-to-section"><a href="logout">Log Out</a></li>
+                            <!-- <li class="submenu">
+                                <a href="javascript:;">Drop Down</a>
+                                <ul>
+                                    <li><a href="">About Us</a></li>
+                                    <li><a href="">Features</a></li>
+                                    <li><a href="">FAQ's</a></li>
+                                    <li><a href="">Blog</a></li>
+                                </ul>
+                            </li> -->
+                            <!-- <li class="scroll-to-section"><a href="#contact-us">Contact Us</a></li>
+                            <div class="search-icon">
+                                <a href="#search"><i class="fa fa-search"></i></a>
+                            </div> -->
+                        </ul>
+                        <!-- <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a> -->
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Search Area ***** -->
+  
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+            <!-- Item -->
+        
+            <!-- // Item -->
+        
+            <!-- // Item -->
+            <!-- Item -->
+            <div class="item">
+                <div class="img-fill">
+                    <img src="static/assets/images/slide-03.jpg" alt="">
+                    <div class="text-content">
+                        <!-- <h3>High Performance</h3> -->
+                        <h1>UPLOAD IMAGE HERE</h1>
+                        <br>
+
+                        <form method="post" enctype="multipart/form-data" action="predictImage">
+
+                            {% csrf_token %}
+                       
+                        <input class="main-filled-button"   name="filePath" type="file">
+                        <input class="button"  
+                         type="submit"  value="Predict">
+                        <!-- <a href="#" class="main-filled-button">Get It Now</a> -->
+                    </div>
+                </div>
+            </div>
+            <!-- // Item -->
+        </div>
+    </div>
+              
+    <!-- ***** Features Big Item End ***** -->
+
+
+
+                    
+    
+
+
+    <!-- jQuery -->
+    <script src="static/assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="static/assets/js/popper.js"></script>
+    <script src="static/assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="static/assets/js/owl-carousel.js"></script>
+    <script src="static/assets/js/scrollreveal.min.js"></script>
+    <script src="static/assets/js/waypoints.min.js"></script>
+    <script src="static/assets/js/jquery.counterup.min.js"></script>
+    <script src="static/assets/js/imgfix.min.js"></script>
+    <script src="static/assets/js/slick.js"></script>
+    <script src="static/assets/js/lightbox.js"></script>
+    <script src="static/assets/js/isotope.js"></script>
+
+    <!-- Global Init -->
+    <script src="static/assets/js/custom.js"></script>
+
+    <script>
+
+        $(function () {
+            var selectedClass = "";
+            $("p").click(function () {
+                selectedClass = $(this).attr("data-rel");
+                $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("." + selectedClass).fadeOut();
+                setTimeout(function () {
+                    $("." + selectedClass).fadeIn();
+                    $("#portfolio").fadeTo(50, 1);
+                }, 500);
+
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
+
+{% endblock %}
