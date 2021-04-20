@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.core.files.storage import FileSystemStorage
 # Create your views here.
-from tkinter import *
-from tkinter import filedialog
-import tkinter as tk
+# from tkinter import *
+# from tkinter import filedialog
+# import tkinter as tk
 import numpy as np
-import matplotlib.pyplot as plt
-import h5py
+# import matplotlib.pyplot as plt
+# import h5py
 from PIL import Image
 from keras.models import Sequential
 from keras.layers import Dense
