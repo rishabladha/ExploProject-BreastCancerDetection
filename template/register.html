@@ -15,9 +15,6 @@
 			padding: 0;
 			height: 100%;
 			background-image: linear-gradient(#FDC830,#F37335);
-			/* background-image: linear-gradient(green,orange,#FFF200,brown); */
-  /* background-repeat: no-repeat, repeat; */
-			/* background: #7abecc !important; */
 		}
 		.user_card {
 			width: 350px;
@@ -72,11 +69,9 @@
 		}
 		
 		
-		/* body {
-  
-  /* background-color: #af1010; */
-} */
-		
+	
+} 
+
 
 	</style>
 
@@ -88,51 +83,46 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
-					<h3 id="form-title">REGISTER ACCOUNT</h3>
+					<h3 id="form-title">REGISTER ACCOUNT</h3>   <!-- Heading  -->
 				</div>
 				<div class="d-flex justify-content-center form_container">
 
 					<form method="POST" action="">
-						{% csrf_token %}
+						{% csrf_token %}    <!-- CSRF token  ensures that only forms that have originated from trusted domains can be used to POST data back.  -->
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
-							</div>
-							{{form.username}}
+							</div> 
+							{{form.username}}             <!--  username will be stored in form  -->
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
 							</div>
-							{{form.email}}
+							{{form.email}}                 <!--  form will be stored in form  -->
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							{{form.password1}}
+							{{form.password1}}		       <!--  password1 will be stored in form  -->
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							{{form.password2}}
+							{{form.password2}}				<!--  password2 will be stored in form  -->
 						</div>
-
-
-
 				   		<div class="d-flex justify-content-center mt-3 login_container">
-				 			<input class="btn login_btn" type="submit" value="Register Account">
+				 			<input class="btn login_btn" type="submit" value="Register Account">   <!-- will send all cerendentals to view register  -->
 				   		</div>
-
 					</form>
 				</div>
-
-				{{form.errors}}
 				
+				{{form.errors}}				
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links random" >
-						Already have an account? <a href="{% url 'login' %}" class="ml-2 random">Login</a>
+						Already have an account? <a href="{% url 'login' %}" class="ml-2 random">Login</a>   <!--  login button will redirect to login page  -->
 					</div>
 				</div>
 			</div>

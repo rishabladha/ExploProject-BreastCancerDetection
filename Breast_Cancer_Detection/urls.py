@@ -21,17 +21,19 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.views.static import serve
 urlpatterns = [
+    #admin path
     path('admin/', admin.site.urls),
-    path('register/', views.registerPage , name = 'register'),
-    path('login/', views.loginPage , name = 'login'),
-    path('logout/', views.logoutUser, name="logout"),
-
-    # path('admin/', admin.site.urls),
-    url('home',views.index,name = 'homepage'),
-    url('predictImage',views.predictImage,name = 'predictImage'),
-    path('download/<int:pk>/',views.some_view,name = 'download'),
+    
+    path('register/', views.registerPage , name = 'register'),               #url for registration page        
+    path('login/', views.loginPage , name = 'login'),                        #url for login
+    path('logout/', views.logoutUser, name="logout"),                        #url for logout
+    url('home',views.index,name = 'homepage'),                               #url for homepage
+    url('predictImage',views.predictImage,name = 'predictImage'),            #url for predict image to run model in backend
+    path('download/<int:pk>/',views.some_view,name = 'download'),            #url for to download report as pdf
     url(r'^media/(?P<path>.*)$', serve,{'document_root':settings.MEDIA_ROOT}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), # images path 
+
+    
 ]
 
 

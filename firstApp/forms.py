@@ -5,10 +5,7 @@ from django import forms
 
 
 
-# from .models import Order
-
-
-
+# created form for registration of user ,  these all are input required
 class CreateUserForm(UserCreationForm):
 	class Meta:
 		model = User

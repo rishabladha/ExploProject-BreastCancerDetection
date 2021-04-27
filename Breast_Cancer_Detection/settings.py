@@ -20,7 +20,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'g(p!y(q7y8z$vazu&sd88wa4a8(tf3lvaaz5-@a+)d*lfhsb%=')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -134,6 +133,8 @@ STATICFILES_DIRS = (
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+
+#setting the images path
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 

@@ -13,24 +13,14 @@
 
     <title>Breezed HTML Bootstrap Template</title>
 
-    <!--
+  
 
-Breezed Template
 
-https://templatemo.com/tm-543-breezed
-
--->
     <!-- Additional CSS Files -->
-    <!-- template/static/assets/css/bootstrap.min.css -->
+  
     <link rel="stylesheet" type="text/css" href="static/assets/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" type="text/css" href="/home/rishi_maheswari/Desktop/Breast_Cancer_Detection/template/static/assets/css/bootstrap.min.css"> -->
-
     <link rel="stylesheet" type="text/css" href="static/assets/css/font-awesome.css">
-
     <link rel="stylesheet" href="static/assets/css/templatemo-breezed.css">
-
-    <!-- <link rel="stylesheet" href="static/assets/css/owl-carousel.css"> -->
-
     <link rel="stylesheet" href="static/assets/css/lightbox.css">
 
     <style>
@@ -45,12 +35,13 @@ https://templatemo.com/tm-543-breezed
             -webkit-border-radius: 5px;
             border-radius: 5px;
         }
-
+         
+        
         input[type=file]:focus {
             border-color: #333;
         }
 
-
+        /* designing button */
         .button {
             display: inline-flex;
             height: 40px;
@@ -72,69 +63,13 @@ https://templatemo.com/tm-543-breezed
             text-decoration: none;
             letter-spacing: 1px;
         }
-
-
-        /* First Button */
-
-        #arrow-hover {
-            width: 15px;
-            height: 10px;
-            position: absolute;
-            transform: translateX(60px);
-            opacity: 0;
-            -webkit-transition: all .25s cubic-bezier(.14, .59, 1, 1.01);
-            transition: all .15s cubic-bezier(.14, .59, 1, 1.01);
-            margin: 0;
-            padding: 0 5px;
-        }
-
-        /* Fifth Button */
-
-        #button-5 {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        #button-5 a {
-            position: relative;
-            transition: all .45s ease-Out;
-        }
-
-        #translate {
-            transform: rotate(50deg);
-            width: 100%;
-            height: 250%;
-            left: -200px;
-            top: -30px;
-            background: #BFC0C0;
-            position: absolute;
-            transition: all .3s ease-Out;
-        }
-
-        #button-5:hover #translate {
-            left: 0;
-        }
-
-        #button-5:hover a {
-            color: #2D3142;
-        }
+ 
     </style>
 
 </head>
 {% block content%}
 
 <body>
-
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    <!-- ***** Preloader End ***** -->
 
 
     <!-- ***** Header Area Start ***** -->
@@ -143,30 +78,12 @@ https://templatemo.com/tm-543-breezed
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
                         <h2 class="logo">
                             RESULT
                         </h2>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
+                    
                         <ul class="nav">
-                            <!-- <li class="scroll-to-section"><a href="https://www.mayoclinic.org/diseases-conditions/breast-cancer/symptoms-causes/syc-20352470#:~:text=Doctors%20know%20that%20breast%20cancer,other%20parts%20of%20your%20body." class="active">About</a></li> -->
-
-                            <!-- <li class="scroll-to-section"><a href="https://www.mayoclinic.org/diseases-conditions/breast-cancer/symptoms-causes/syc-20352470#:~:text=Doctors%20know%20that%20breast%20cancer,other%20parts%20of%20your%20body.">About</a></li> -->
                             <li class="scroll-to-section"><a href="logout">Log Out</a></li>
-
-                            <!-- </li>  -->
-                            <!-- <li class="scroll-to-section"><a href="#contact-us">Contact Us</a></li>
-                            <div class="search-icon">
-                                <a href="#search"><i class="fa fa-search"></i></a>
-                            </div> -->
-                            <!-- </ul> -->
-                            <!-- <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a> -->
-                            <!-- ***** Menu End ***** -->
-
-
                     </nav>
                 </div>
             </div>
@@ -174,48 +91,23 @@ https://templatemo.com/tm-543-breezed
     </header>
     <!-- ***** Header Area End ***** -->
 
-    <!-- ***** Search Area ***** -->
-
-
-    <!-- ***** Main Banner Area Start ***** -->
     <div class="main-banner header-text" id="top">
         <div class="Modern-Slider">
-            <!-- Item -->
-
-            <!-- // Item -->
-
-            <!-- // Item -->
-            <!-- Item -->
             <div class="item">
                 <div class="img-fill">
-                    <img src="static/assets/images/slide-03.jpg" alt="">
+                    <img src="static/assets/images/slide-03.jpg" alt="">          <!-- setting background image -->
                     <div class="text-content">
-
-                        {% csrf_token %}
-
-                        <h1> {{s}} </h1>
+                        {% csrf_token %}    <!-- CSRF token  ensures that only forms that have originated from trusted domains can be used to POST data back.  -->
+                        <h1> {{s}} </h1>    <!-- printing result which is forwaded by  view -->
                         <br>
                         <br>
-                        <a href="download/{{id}}/" download="Report" class="main-stroked-button">Download Report</a>
-                        <a href="home" class="main-filled-button">Another Query</a>
-                        <!-- <form method="POST" action="logout">  
-                           <input class="main-filled-button" type="submit"/>  
-                         </form>     -->
-                        <!-- <a href="#" class="main-filled-button">Get It Now</a> -->
+                        <a href="download/{{id}}/" download="Report" class="main-stroked-button">Download Report</a>  <!-- to download report button sending this to download view -->
+                        <a href="home" class="main-filled-button">Another Query</a>    <!-- will redirect to home page for another Query -->
                     </div>
                 </div>
             </div>
-            <!-- // Item -->
         </div>
     </div>
-
-    <!-- ***** Features Big Item End ***** -->
-
-
-
-
-
-
 
     <!-- jQuery -->
     <script src="static/assets/js/jquery-2.1.0.min.js"></script>
@@ -236,24 +128,6 @@ https://templatemo.com/tm-543-breezed
 
     <!-- Global Init -->
     <script src="static/assets/js/custom.js"></script>
-
-    <script>
-
-        $(function () {
-            var selectedClass = "";
-            $("p").click(function () {
-                selectedClass = $(this).attr("data-rel");
-                $("#portfolio").fadeTo(50, 0.1);
-                $("#portfolio div").not("." + selectedClass).fadeOut();
-                setTimeout(function () {
-                    $("." + selectedClass).fadeIn();
-                    $("#portfolio").fadeTo(50, 1);
-                }, 500);
-
-            });
-        });
-
-    </script>
 
 </body>
 
