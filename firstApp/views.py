@@ -142,7 +142,7 @@ def loginPage(request):
 # view for logout
 def logoutUser(request):
     logout(request)                           # logout fn 
-    return redirect('login')                  
+    return redirect('base')                  
 
 
 # to redirect the website to home page
@@ -258,7 +258,7 @@ def some_view(request, pk):
     p.line(1.5, 750, 592.6, 750)    
     p.drawString(190, 780, "TEST RESULTS")    # used to writr string
     p.setFont("Helvetica-Bold", 18)
-    p.drawString(122, 690, "Patient Id        : " + "  "  + random_str )
+    p.drawString(122, 690, "Patient Id        :" + "  "  + random_str )
     p.drawString(122, 660, "Patient Name : " + "  "  + username )
     p.drawString(122, 630, "Email Id          : " + "  "  + email )
     p.setFont("Helvetica-Bold", 22)

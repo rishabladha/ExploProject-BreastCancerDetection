@@ -79,17 +79,17 @@
             font-size: 6mm ;
         }
      
-        .left {
+        .center {
         display: inline-block;
         /* border: 2px solid red; */
         
-        left: 64px;
+        center: 64px;
         top: 40px;
   
     }
 
 
-        .left img {
+        .center img {
             border: 4px solid green;
         width: 201px;
   height: 150px;
@@ -146,12 +146,190 @@
 }
 
 
-.left img {
+.center img {
     border: 4px solid #f5970b;
     width: 201px;
     height: 150px;
     overflow: hidden;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        .left {
+        display: inline-block;
+        /* border: 2px solid red; */
+        position: absolute;
+        left: -114px;
+        top: 16px;
+  
+    }
+
+
+
+    .right {
+        position: absolute;
+        right: -114px;
+        top: 2px;
+        display: inline-block;
+        /* border: 2px solid yellow; */
+    }
+
+    .center {
+        position: absolute;
+        right: 500px;
+        top: -120px;
+        margin: 4px;
+        display: inline-block;
+        /* border: 2px solid yellow; */
+    }
+
+    .center img {
+    width: 130px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    height: 130px;
+    overflow: hidden;
+    border: 2px solid #fe1fed;
+    border-radius: 20%;
+}
+
+    .left img {
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 15%;
+    /* border: 2px solid green; */
+}
+    .right img {
+    width: 110px;
+    height: 110px;
+    /* overflow: hidden; */
+    border-radius: 15%;
+    border-radius: 2;
+    border-color: green;
+    }
+
+    .cl {
+    color: black;
+    position: absolute;
+    margin-top: 212px;
+    left: -110px;
+    font-family: Trebuchet MS;
+    bottom: 100;
+    /* text-align: center; */
+    right: 4;
+    font-size: x-large;
+}
+
+
+.center img {
+    width: 180px;
+    margin-top: -66px;
+    margin-bottom: 36px;
+    height: 180px;
+    overflow: hidden;
+    border: 6px solid #f5970b;
+    border-radius: 20%;
+}
+  
+
+
+
+
+.Modern-Slider .text-content {
+    width: 83%;
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.para {
+    /* margin-top: 20px; */
+    color: black;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    /* margin: 1em 0; */
+    position: absolute;
+    margin-top: 100px;
+    right: -110px;
+    font-family: Trebuchet MS;
+    bottom: 100;
+    /* text-align: center; */
+    right: 4;
+    font-size: x-large;
+}
+
+
+
+
+
 
     </style>
 
@@ -160,28 +338,39 @@
 
 <body>
  
+  
 
-    
 
-    <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
-                        <h2 class="logo">
-                            RESULT
-                        </h2>
-                    
+                        <div class="left">
+                            <img src="static/assets/images/iitbhulogo1.png" alt="logo">
+                          </div>                        
+                        <h1  class="logo">
+                           RESULT              <!-- Heading  -->
+                        </h1>
+
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="logout">Log Out</a></li>
+
+                            
+                            <li class="scroll-to-section"><a href="logout">Log Out</a></li>    <!-- logout button -->
+                            
+                            <div class="right">
+                                <img src="static/assets/images/centernary.png" alt="logo">
+                              </div>
+                        </ul>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
-    <!-- ***** Header Area End ***** -->
+    
 
+    <!-- ***** Header Area Start ***** -->
+   
     <div class="main-banner header-text" id="top">
         <div class="Modern-Slider">
             <div class="item">
@@ -191,7 +380,7 @@
                         {% csrf_token %}    <!-- CSRF token  ensures that only forms that have originated from trusted domains can be used to POST data back.  -->
 
                         
-                        <div class="left">
+                        <div class="center">
                             <img  src= '{{ image }}' alt="logo">
                           </div>
 
@@ -206,6 +395,7 @@
    
                         <a href="download/{{id}}/" download="Report" class="main-stroked-button">Download Report</a>  <!-- to download report button sending this to download view -->
                         <a href="send_email" class="main-filled-button">Email Me Report</a>    <!-- will redirect to home page for another Query -->
+                        <p CLASS="para">Copyright © IIT BHU 2021</p>
                     </div>
                 </div>
             </div>

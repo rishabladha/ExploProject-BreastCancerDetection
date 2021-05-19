@@ -16,7 +16,7 @@ Including another URLconf
 from os import name
 from re import template
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from django.conf.urls import url
 from firstApp import views
 from django.conf.urls.static import static
@@ -26,7 +26,8 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     #admin path
-    url('base',views.base2,name = 'base2'), 
+    url('base',views.base2,name = 'base'), 
+    path('verification/', include('verify_email.urls')),
     path('admin/', admin.site.urls),
     path('register/', views.registerPage , name = 'register'),               #url for registration page        
     path('login/', views.loginPage , name = 'login'),                        #url for login
