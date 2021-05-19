@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+
+    <title>Breast Cancer Detection</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/static/assets/css/templatemo-breezed.css">
+    <link rel="stylesheet" href="/static/assets/css/lightbox.css">
+
+    <style>
+        h1 {
+            color: white;
+        }
+
+        input[type=file] {
+            padding: 5px;
+            border: 2px solid #ccc;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        input[type=file]:focus {
+            border-color: #333;
+        }
+
+        /* styling input button */
+        input[type=text] {
+            padding: 5px;
+            border: 2px solid #ccc;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        /* styling submit button */
+        input[type=text]:focus {
+            border-color: #333;
+        }
+
+        input[type=submit] {
+            padding: 5px 15px;
+            background: rgb(94, 231, 14);
+            border: 0 none;
+            cursor: pointer;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        .left {
+        display: inline-block;
+        /* border: 2px solid red; */
+        position: absolute;
+        left: -114px;
+        top: 16px;
+  
+    }
+
+
+
+    .right {
+        position: absolute;
+        right: -114px;
+        top: 2px;
+        display: inline-block;
+        /* border: 2px solid yellow; */
+    }
+
+    .center {
+        position: absolute;
+        right: 500px;
+        top: -120px;
+        margin: 4px;
+        display: inline-block;
+        /* border: 2px solid yellow; */
+    }
+
+    .center img {
+    width: 130px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    height: 130px;
+    overflow: hidden;
+    border: 2px solid #fe1fed;
+    border-radius: 20%;
+}
+
+    .left img {
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 15%;
+    /* border: 2px solid green; */
+}
+    .right img {
+    width: 110px;
+    height: 110px;
+    /* overflow: hidden; */
+    border-radius: 15%;
+    border-radius: 2;
+    border-color: green;
+    }
+
+    .cl {
+    color: black;
+    position: absolute;
+    margin-top: 212px;
+    left: -110px;
+    font-family: Trebuchet MS;
+    bottom: 100;
+    /* text-align: center; */
+    right: 4;
+    font-size: x-large;
+}
+.Modern-Slider .item a {
+    margin: 5px 5px;
+}
+.random {
+    color: #b3d7ff;
+}
+
+
+  .upload {
+    /* margin-top: 0px; */
+    font-weight: 700;
+    display: inline-block;
+    font: caption;
+    font-family: Trebuchet MS;
+}
+
+.para {
+    /* margin-top: 20px; */
+    color: black;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    /* margin: 1em 0; */
+    position: absolute;
+    margin-top: 212px;
+    right: -110px;
+    font-family: Trebuchet MS;
+    bottom: 100;
+    /* text-align: center; */
+    right: 4;
+    font-size: x-large;
+}
+
+   .Modern-Slider .text-content {
+    width: 80%;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+._29dDU ._2WuvK ._1T84B {
+    width: 160px;
+    margin: 0 auto;
+}
+
+
+#background
+{
+    height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.user_card {
+    width: 350px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: hsl(34deg 86% 46% / 87%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    -webkit-box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 40px;
+}
+
+
+
+		.form_container {
+			margin-top: 20px;
+		}
+
+		#form-title{
+			color: rgb(255, 255, 255);
+		}
+		.login_btn {
+			width: 100%;
+			background: brown !important;
+			color: white !important;
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background: #51aeda !important;
+			color: white !important;
+			border: 0 !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.random
+		{
+			color:white;
+		}
+
+
+		.text
+		{
+			text-align: center;
+			margin-top: 40;
+			padding-top: 2em;
+
+		}
+
+		.center {
+        position: absolute;
+        right: 500px;
+        top: -120px;
+        /* display: inline-block; */
+        /* border: 2px solid yellow; */
+    }
+
+    .center img {
+        
+        width: 120px;
+        margin-top: 40px;
+        margin-bottom: 30px ;
+  height: 120px;
+  /* overflow: hidden; */
+  border-radius: 50%;
+    }
+
+		.form_container {
+			margin-top: 20px;
+		}
+
+		#form-title{
+			color: #fff;		
+		}
+
+
+		.login_btn {
+			width: 100%;
+			background: brown !important;
+			color: white !important;
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {	background: #51aeda !important;
+			color: white !important;
+			border: 0 !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+       
+
+	    .random
+		{
+			color:white;
+		} 
+
+		
+		#messages{
+			background-color: grey;
+			color: #fff;
+			padding: 10px;
+			margin-top: 10px;
+		}
+		
+		.text
+		{
+			text-align: center;
+			margin-top: 40;
+			padding-top: 2em;
+
+		}
+
+	    /* .center img {
+        
+        width: 120px;
+        margin-top: 40px;
+        margin-bottom: 30px ;
+  height: 120px;
+ 
+  border-radius: 50%;
+    } */
+
+	.center img {
+    width: 130px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    height: 130px;
+    overflow: hidden;
+    border: 2px solid #fe1fed;
+    border-radius: 20%;
+}
+
+.Modern-Slider .item h3 {
+    margin-bottom: 6px;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-family: Trebuchet MS;
+    padding : 0px;
+    margin-top: 10px;
+    color: #FFF;
+    animation: fadeOutRight 1s both;
+}
+
+
+    </style>
+
+</head>
+{% block content%}
+
+<body>
+
+
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <div class="left">
+                            <img src="/static/assets/images/iitbhulogo1.png" alt="logo">
+                          </div>                        
+                        <a href="" class="logo">
+                            Breast Cancer Detection                    <!-- Heading  -->
+                        </a>
+
+                        <ul class="nav">
+
+                            <li class="scroll-to-section"><a
+                                    href="https://www.mayoclinic.org/diseases-conditions/breast-cancer/symptoms-causes/syc-20352470#:~:text=Doctors%20know%20that%20breast%20cancer,other%20parts%20of%20your%20body.">About</a>
+                            </li>
+                           
+                            
+                            <div class="right">
+                                <img src="/static/assets/images/centernary.png" alt="logo">
+                              </div>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+            <div class="item">
+                <div class="img-fill">
+                    <img id = "background" src="/static/assets/images/slide-03.jpg" alt="">
+                    <div class="text-content d-flex justify-content-center h-100">
+                        <div class="user_card">
+                            <div class="d-flex justify-content-center">
+                                <h3 id="form-title">REGISTER ACCOUNT</h3>   <!-- Heading  -->
+                            </div>
+                            <div class="d-flex justify-content-center form_container">
+            
+                                <form method="POST" action="">
+                                    {% csrf_token %}    <!-- CSRF token  ensures that only forms that have originated from trusted domains can be used to POST data back.  -->
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        </div> 
+                                        {{form.username}}             <!--  username will be stored in form  -->
+                                    </div>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+                                        </div>
+                                        {{form.email}}                 <!--  form will be stored in form  -->
+                                    </div>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                        </div>
+                                        {{form.password1}}		       <!--  password1 will be stored in form  -->
+                                    </div>
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                        </div>
+                                        {{form.password2}}				<!--  password2 will be stored in form  -->
+                                    </div>
+                                       <div class="d-flex justify-content-center mt-3 login_container">
+                                         <input class="btn login_btn" type="submit" value="Register Account">   <!-- will send all cerendentals to view register  -->
+                                       </div>
+                                </form>
+                            </div>
+                            
+                            {{form.errors}}				
+                            <div class="mt-4">
+                                <div class="d-flex justify-content-center links random" >
+                                    Already have an account? <a href="{% url 'login' %}" class="ml-2 random">Login</a>   <!--  login button will redirect to login page  -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                   
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+
+
+
+
+    <script>
+        /* Because i didnt set placeholder values in forms.py they will be set here using vanilla Javascript
+//We start indexing at one because CSRF_token is considered and input field 
+*/
+
+//Query All input fields
+var form_fields = document.getElementsByTagName('input')
+form_fields[1].placeholder='Username..';
+form_fields[2].placeholder='Email..';
+form_fields[3].placeholder='Enter password...';
+form_fields[4].placeholder='Re-enter Password...';
+
+
+for (var field in form_fields){	
+form_fields[field].className += ' form-control'
+}
+</script>
+
+
+
+    <!-- jQuery -->
+    <script src="/static/assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="/static/assets/js/popper.js"></script>
+    <script src="/static/assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="/static/assets/js/owl-carousel.js"></script>
+    <script src="/static/assets/js/scrollreveal.min.js"></script>
+    <script src="/static/assets/js/waypoints.min.js"></script>
+    <script src="/static/assets/js/jquery.counterup.min.js"></script>
+    <script src="/static/assets/js/imgfix.min.js"></script>
+    <script src="/static/assets/js/slick.js"></script>
+    <script src="/static/assets/js/lightbox.js"></script>
+    <script src="/static/assets/js/isotope.js"></script>
+
+    <!-- Global Init -->
+    <script src="/static/assets/js/custom.js"></script>
+
+</body>
+{% endblock %}
+</html>
+

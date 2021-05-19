@@ -16,6 +16,18 @@
 			height: 100%;
 			background-image: linear-gradient(#FDC830,#F37335);
 		}
+
+		#background
+{
+    height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 		.user_card {
 			width: 350px;
 			margin-top: auto;
@@ -67,10 +79,52 @@
 		{
 			color:white;
 		}
+
+
+		.text
+		{
+			text-align: center;
+			margin-top: 40;
+			padding-top: 2em;
+
+		}
+
+		.center {
+        position: absolute;
+        right: 500px;
+        top: -120px;
+        /* display: inline-block; */
+        /* border: 2px solid yellow; */
+    }
+
+    .center img {
+        
+        width: 120px;
+        margin-top: 40px;
+        margin-bottom: 30px ;
+  height: 120px;
+  /* overflow: hidden; */
+  border-radius: 50%;
+    }
+
+	.para {
+    /* margin-top: 20px; */
+    color: black;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    /* margin: 1em 0; */
+    position: absolute;
+    margin-top: 212px;
+    right: -110px;
+    font-family: Trebuchet MS;
+    bottom: 100;
+    /* text-align: center; */
+    right: 4;
+    font-size: x-large;
+}
 		
 		
 	
-} 
+
 
 
 	</style>
@@ -79,7 +133,17 @@
 <body>
 
 	
+   
+
 	<div class="container h-100">
+
+
+	<div class="text">
+		<h1> Breast Cancer Detection</h1>
+	</div>
+	
+
+	
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
@@ -125,6 +189,8 @@
 						Already have an account? <a href="{% url 'login' %}" class="ml-2 random">Login</a>   <!--  login button will redirect to login page  -->
 					</div>
 				</div>
+
+				<!-- <p CLASS="para">Copyright © IIT BHU 2021</p> -->
 			</div>
 		</div>
 	</div>

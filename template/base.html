@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+    <title>Breast Cancer Detection</title>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="static/assets/css/templatemo-breezed.css">
+    <link rel="stylesheet" href="static/assets/css/lightbox.css">
+
+    <style>
+        h1 {
+            color: white;
+        }
+
+        input[type=file] {
+            padding: 5px;
+            border: 2px solid #ccc;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        input[type=file]:focus {
+            border-color: #333;
+        }
+
+        /* styling input button */
+        input[type=text] {
+            padding: 5px;
+            border: 2px solid #ccc;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+
+        /* styling submit button */
+        input[type=text]:focus {
+            border-color: #333;
+        }
+
+        input[type=submit] {
+            padding: 5px 15px;
+            background: rgb(94, 231, 14);
+            border: 0 none;
+            cursor: pointer;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+{% block content%}
+
+<body>
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <a href="" class="logo">
+                            Breast Cancer Detection                    <!-- Heading  -->
+                        </a>
+
+                        <ul class="nav">
+
+                            <li class="scroll-to-section"><a
+                                    href="https://www.mayoclinic.org/diseases-conditions/breast-cancer/symptoms-causes/syc-20352470#:~:text=Doctors%20know%20that%20breast%20cancer,other%20parts%20of%20your%20body.">About</a>
+                            </li>
+                            <li class="scroll-to-section"><a href="logout">Log Out</a></li>    <!-- logout button -->
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner header-text" id="top">
+        <div class="Modern-Slider">
+            <div class="item">
+                <div class="img-fill">
+                    <img src="static/assets/images/slide-03.jpg" alt="">
+                    <div class="text-content">
+                        <!-- <h3>High Performance</h3> -->
+                        <h3>Copyright IIT BHU</h3>
+                        <br>
+                        <br>
+                        <h1>UPLOAD IMAGE HERE</h1>
+                        <br>
+
+                        <form method="post" enctype="multipart/form-data" action="predictImage">
+
+                            {% csrf_token %}
+                            <!-- CSRF token  ensures that only forms that have originated from trusted domains can be used to POST data back.  -->
+
+                            <input class="main-filled-button" name="filePath" type="file">   <!--  image input  -->
+                            <input class="button" type="submit" value="Predict">             <!-- predict button  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="static/assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="static/assets/js/popper.js"></script>
+    <script src="static/assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="static/assets/js/owl-carousel.js"></script>
+    <script src="static/assets/js/scrollreveal.min.js"></script>
+    <script src="static/assets/js/waypoints.min.js"></script>
+    <script src="static/assets/js/jquery.counterup.min.js"></script>
+    <script src="static/assets/js/imgfix.min.js"></script>
+    <script src="static/assets/js/slick.js"></script>
+    <script src="static/assets/js/lightbox.js"></script>
+    <script src="static/assets/js/isotope.js"></script>
+
+    <!-- Global Init -->
+    <script src="static/assets/js/custom.js"></script>
+
+</body>
+
+</html>
+
+{% endblock %}

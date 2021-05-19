@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'g(p!y(q7y8z$vazu&sd88wa4a8(tf3lvaaz5-@a+)d*lfhsb%=')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','explobreastcancerprediction.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1',]
 
 
 # Application definition
@@ -37,7 +38,23 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'firstApp',
+    'crispy_forms',
+    
 ]
+
+
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# EMAIL_BACKEND = 'django_ses.SESBackend'
+# AWS_ACCESS_KEY_ID = 'AKIAVFXPNJNFZCWVM6U2'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_SES_REGION_NAME = 'ap-south-1' #(ex: us-east-2)
+# AWS_SES_REGION_ENDPOINT ='email.ap-south-1.amazonaws.com' #(ex: email.us-east-2.amazonaws.com)
+# DEFAULT_FROM_EMAIL = 'rishabladhal31566@gmail.com'
 
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -138,3 +155,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'rishab.ladha.cd.cse19@itbhu.ac.in'
+EMAIL_HOST_PASSWORD = 'fyiptzdezthigzwn'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Explo Team <rishabladha31566@gmail.com>'

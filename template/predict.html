@@ -11,7 +11,7 @@
         rel="stylesheet">
 
 
-    <title>Breezed HTML Bootstrap Template</title>
+    <title>Breast Cancer Detection</title>
 
   
 
@@ -41,6 +41,14 @@
             border-color: #333;
         }
 
+        .image
+        {
+            height: 100px;
+            /* width : 10px; */
+            /* fill:; */
+            scale : 2 ;
+        }
+
         /* designing button */
         .button {
             display: inline-flex;
@@ -63,14 +71,97 @@
             text-decoration: none;
             letter-spacing: 1px;
         }
- 
+
+        .text
+        {
+            margin-top: 10px;
+            color: white;
+            font-size: 6mm ;
+        }
+     
+        .left {
+        display: inline-block;
+        /* border: 2px solid red; */
+        
+        left: 64px;
+        top: 40px;
+  
+    }
+
+
+        .left img {
+            border: 4px solid green;
+        width: 201px;
+  height: 150px;
+  overflow: hidden;
+  
+    }
+
+    .h1
+    {
+        margin-top: 24;
+        font-size: x-large;
+    }
+  
+
+    .header-area .main-nav .logo {
+    line-height: 80px;
+    color: #fff;
+    font-family: Trebuchet MS;
+    font-size: 44px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    float: left;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+
+.header-area .main-nav .nav li a {
+    display: block;
+    font-weight: 700;
+    font-size: 22px;
+    color: #f8f8f8;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    height: 40px;
+    line-height: 40px;
+    border: transparent;
+    letter-spacing: 0px;
+}
+
+.header-area .main-nav .nav li a:hover
+{
+    color: black;
+}
+
+
+.left img {
+    border: 4px solid #f5970b;
+    width: 201px;
+    height: 150px;
+    overflow: hidden;
+}
+
     </style>
 
 </head>
 {% block content%}
 
 <body>
+ 
 
+    
 
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
@@ -98,11 +189,23 @@
                     <img src="static/assets/images/slide-03.jpg" alt="">          <!-- setting background image -->
                     <div class="text-content">
                         {% csrf_token %}    <!-- CSRF token  ensures that only forms that have originated from trusted domains can be used to POST data back.  -->
-                        <h1> {{s}} </h1>    <!-- printing result which is forwaded by  view -->
+
+                        
+                        <div class="left">
+                            <img  src= '{{ image }}' alt="logo">
+                          </div>
+
+                        <p class="text">  patient id :  {{ random_str }}</p>
+                        <p class="text">  patient name :  {{ username }}</p>
+                        <p class="text">     email     :  {{ email }}</p>
                         <br>
+                        <h1 class="h1"> {{ str1 }} % </h1>    <!-- printing result which is forwaded by  view -->
+                        <br> 
                         <br>
+
+   
                         <a href="download/{{id}}/" download="Report" class="main-stroked-button">Download Report</a>  <!-- to download report button sending this to download view -->
-                        <a href="home" class="main-filled-button">Another Query</a>    <!-- will redirect to home page for another Query -->
+                        <a href="send_email" class="main-filled-button">Email Me Report</a>    <!-- will redirect to home page for another Query -->
                     </div>
                 </div>
             </div>

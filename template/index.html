@@ -56,6 +56,138 @@
             -webkit-border-radius: 5px;
             border-radius: 5px;
         }
+
+        .left {
+        display: inline-block;
+        /* border: 2px solid red; */
+        position: absolute;
+        left: -114px;
+        top: 16px;
+  
+    }
+
+
+
+    .right {
+        position: absolute;
+        right: -114px;
+        top: 2px;
+        display: inline-block;
+        /* border: 2px solid yellow; */
+    }
+
+    .center {
+        position: absolute;
+        right: 500px;
+        top: -120px;
+        margin: 4px;
+        display: inline-block;
+        /* border: 2px solid yellow; */
+    }
+
+    .center img {
+    width: 130px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    height: 130px;
+    overflow: hidden;
+    border: 2px solid #fe1fed;
+    border-radius: 20%;
+}
+
+    .left img {
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 15%;
+    /* border: 2px solid green; */
+}
+    .right img {
+    width: 110px;
+    height: 110px;
+    /* overflow: hidden; */
+    border-radius: 15%;
+    border-radius: 2;
+    border-color: green;
+    }
+
+    .cl {
+    color: black;
+    position: absolute;
+    margin-top: 212px;
+    left: -110px;
+    font-family: Trebuchet MS;
+    bottom: 100;
+    /* text-align: center; */
+    right: 4;
+    font-size: x-large;
+}
+
+
+
+  .upload {
+    /* margin-top: 0px; */
+    font-weight: 700;
+    display: inline-block;
+    font: caption;
+    font-family: Trebuchet MS;
+}
+
+.para {
+    /* margin-top: 20px; */
+    color: black;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    /* margin: 1em 0; */
+    position: absolute;
+    margin-top: 212px;
+    right: -110px;
+    font-family: Trebuchet MS;
+    bottom: 100;
+    /* text-align: center; */
+    right: 4;
+    font-size: x-large;
+}
+
+   .Modern-Slider .text-content {
+    width: 80%;
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+._29dDU ._2WuvK ._1T84B {
+    width: 160px;
+    margin: 0 auto;
+}
+
+
+#background
+{
+    height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-area .main-nav .nav li a {
+    display: block;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    height: 40px;
+    line-height: 40px;
+    border: transparent;
+    letter-spacing: 1px;
+}
+
     </style>
 
 </head>
@@ -63,12 +195,17 @@
 
 <body>
 
+
+
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
+                        <div class="left">
+                            <img src="static/assets/images/iitbhulogo1.png" alt="logo">
+                          </div>                        
                         <a href="" class="logo">
                             Breast Cancer Detection                    <!-- Heading  -->
                         </a>
@@ -80,6 +217,9 @@
                             </li>
                             <li class="scroll-to-section"><a href="logout">Log Out</a></li>    <!-- logout button -->
                             
+                            <div class="right">
+                                <img src="static/assets/images/centernary.png" alt="logo">
+                              </div>
                         </ul>
                     </nav>
                 </div>
@@ -94,23 +234,41 @@
         <div class="Modern-Slider">
             <div class="item">
                 <div class="img-fill">
-                    <img src="static/assets/images/slide-03.jpg" alt="">
+                    <img id = "background" src="static/assets/images/slide-03.jpg" alt="">
                     <div class="text-content">
                         <!-- <h3>High Performance</h3> -->
-                        <h1>UPLOAD IMAGE HERE</h1>
-                        <br>
-
+                        <div class="center">
+                        <img src="static/assets/images/BreastCancer3.png" alt="logo">
+                        </div>    
+                       
+                       
+                        <!-- <p class="upload"></p>
+                         -->
+                         <br>
+                         <br>
+                         <br>
+                         <h3 class="upload">UPLOAD IMAGE HERE</h3>
+                        <!-- <br> -->
+    
                         <form method="post" enctype="multipart/form-data" action="predictImage">
 
                             {% csrf_token %}
                             <!-- CSRF token  ensures that only forms that have originated from trusted domains can be used to POST data back.  -->
 
                             <input class="main-filled-button" name="filePath" type="file">   <!--  image input  -->
-                            <input class="button" type="submit" value="Predict">             <!-- predict button  -->
+                            <input class="button" type="submit" value="Predict">
+                            <p CLASS="para">Copyright © IIT BHU 2021</p>
+                            
+                            <p class ="cl"> Number Of Visitors :  {{ counte }} </p>
+                            
+                          <!-- predict button  -->
                     </div>
+                    
+                   
                 </div>
             </div>
         </div>
+       
     </div>
 
 
@@ -142,7 +300,6 @@
     <script src="static/assets/js/custom.js"></script>
 
 </body>
-
+{% endblock %}
 </html>
 
-{% endblock %}

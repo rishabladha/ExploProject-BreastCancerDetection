@@ -6,3 +6,7 @@ from django.db import models
 class result(models.Model):
     image = models.FileField(upload_to = 'media')
     result = models.TextField()
+
+
+class Counter(models.Model):
+    count1=models.IntegerField()        

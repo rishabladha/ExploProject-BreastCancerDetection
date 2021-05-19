@@ -2,6 +2,7 @@
 <!-- this is the header page for all html files and will be loaded First -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
      <title>Breast Cancer Detection</title>
@@ -13,53 +14,37 @@
      <meta name="author" content="Tooplate">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      <style>
           body {
-              /* background color setting */
+               /* background color setting */
                background-color: #abcdea;
           }
-          
+
           div.a {
-  text-align: center;
-}
-
-.container{  
-text-align: center;  
-border: 7px solid red;  
-width: 300px;  
-height: 200px;  
-padding-top: 100px;  
-}  
-#btn{  
-font-size: 25px;  
-}  
-
-
-.center{
-     margin: auto;
-  width: 50%;
-  /* border: 3px solid green; */
-  padding: 10px;
-}
+               text-align: center;
+          }
      </style>
 
 </head>
 
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
-     <div class = "a">
+     <div class="a">
           <h1>Breast Cancer Detection</h1>
-            <!-- heading -->
-         </div>
+          <!-- heading -->
+     </div>
 
-<div >
-     {% block content%}
-     
-     {% endblock %}
-    
-</div>
+     <div>
+          {% block content%}
 
-    
+          {% endblock %}
+
+     </div>
+
+
 
 </body>
+
 </html>
